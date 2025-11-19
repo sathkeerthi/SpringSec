@@ -1,4 +1,4 @@
-package com.spring.SpringSec;
+package com.spring.SpringSec.model;
 
 import lombok.*;
 
