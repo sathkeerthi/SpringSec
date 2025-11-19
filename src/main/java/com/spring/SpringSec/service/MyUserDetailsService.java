@@ -1,5 +1,7 @@
 package com.spring.SpringSec.service;
 
+import com.spring.SpringSec.model.UserPrincipal;
+import com.spring.SpringSec.model.Users;
 import com.spring.SpringSec.respository.UserRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,6 +17,14 @@ public class MyUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return null;
+
+        Users user = repo.findByUsername(username);
+
+        if (user == null){
+            System.out.println("User not found");
+            throw new UsernameNotFoundException("User not found");
+        }
+
+        return new UserPrincipal(user);
     }
 }
