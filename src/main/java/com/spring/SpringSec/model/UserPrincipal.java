@@ -20,7 +20,7 @@ public class UserPrincipal implements UserDetails {
 
     @Override
     public String getPassword() {
-        return "{noop}" + user.getPassword();
+        return user.getPassword();
 //        Note: {noop} is necessary to prefix, or need to encrypt passwords
     }
 
