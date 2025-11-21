@@ -1,8 +1,6 @@
 package com.spring.SpringSec.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -15,7 +13,9 @@ import lombok.*;
 @ToString
 public class Users {
     @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String username;
     private String password;
 }
